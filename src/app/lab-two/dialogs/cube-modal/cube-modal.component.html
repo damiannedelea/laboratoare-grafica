@@ -1,0 +1,66 @@
+<form [formGroup]="cubeForm">
+    <mat-form-field>
+        <mat-label>Identifier</mat-label>
+        <input matInput type="text" formControlName="identifier">
+        <mat-error *ngIf="f.identifier.hasError('required')">
+            Identifier is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>X position</mat-label>
+        <input matInput type="number" formControlName="x">
+        <mat-error *ngIf="f.x.hasError('required')">
+            X position is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Y position</mat-label>
+        <input matInput type="number" formControlName="y">
+        <mat-error *ngIf="f.y.hasError('required')">
+            Y position is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Height</mat-label>
+        <input matInput type="number" formControlName="height">
+        <mat-error *ngIf="f.height.hasError('required')">
+            Height is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Width</mat-label>
+        <input matInput type="number" formControlName="width">
+        <mat-error *ngIf="f.width.hasError('required')">
+            Width is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Shift</mat-label>
+        <input matInput type="number" formControlName="shift">
+        <mat-error *ngIf="f.shift.hasError('required')">
+            Shift is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="type">
+            <mat-option [value]="'stroke'">{{'Stroke'}}</mat-option>
+            <mat-option [value]="'fill'">{{'Fill'}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="f.type.hasError('required')">
+            type is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Color</mat-label>
+        <input matInput type="text" formControlName="color">
+        <mat-error *ngIf="f.color.hasError('required')">
+            Color is <strong>required</strong>
+        </mat-error>
+    </mat-form-field>
+</form>
+
+
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="closeModal()" [disabled]="!cubeForm.valid">Add square</button>
+</div>

@@ -1,0 +1,21 @@
+<mat-sidenav-container>
+    <mat-sidenav [(opened)]="sidenavOpened" mode="side">
+        <div class="mat-title"> Navigation bar</div>
+        <div>
+            <button color="primary" mat-raised-button (click)="openShapeModal()">Add shape</button>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button (click)="sidenavOpened=!sidenavOpened" class="open-sidenav"
+                mat-raised-button>{{'Sidenav'}}</button>
+            <button color="primary" mat-raised-button (click)="cleanCanvas()">Clean Canvas</button>
+        <mat-card>
+            <mat-card-content>
+                <canvas #canvas height="600" width="600"></canvas>
+            </mat-card-content>
+        </mat-card>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
